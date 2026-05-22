@@ -66,16 +66,21 @@ body {
   --mk-gradient-overlay: linear-gradient(to bottom, #000000, transparent);
 }
 
-.cm-tooltip:has(.cm-tooltip-cursor),
+.cm-tooltip.cm-tooltip-cursor,
+.cm-tooltip:has(> .cm-tooltip-cursor),
 .cm-tooltip-cursor {
   border: none !important;
   background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  overflow: visible;
   position: relative;
-  z-index: var(--layer-menu);
+  z-index: calc(var(--layer-menu) - 1);
 }
 
-body:not(.is-mobile) .mk-style-menu {
-  margin-left: -80px;
+body:has(> .menu) .cm-tooltip.cm-tooltip-cursor,
+body:has(> .menu) .cm-tooltip:has(> .cm-tooltip-cursor) {
+  display: none;
 }
 
 .mk-style-menu .mk-divider {
@@ -94,7 +99,7 @@ body:not(.is-mobile) .mk-style-menu {
   background-color: var(--background-secondary);
   border-radius: var(--radius-m);
   box-shadow: var(--shadow-s);
-  z-index: var(--layer-menu);
+  z-index: calc(var(--layer-menu) - 1);
 }
 
 .mk-style-toolbar svg,
