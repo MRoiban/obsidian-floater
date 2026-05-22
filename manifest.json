@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-floater",
+  "name": "Make.md Floating Formatting Bar",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Standalone extraction of Make.md's floating text formatting bar.",
+  "author": "",
+  "authorUrl": "https://github.com/Make-md/makemd",
+  "isDesktopOnly": false
+}
